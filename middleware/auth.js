@@ -5,7 +5,7 @@ require("dotenv").config();
 exports.auth = (req, res, next) => {
     try {
 
-        // console.log("Body", req.body.token);
+        // console.log("Body", req.body.token);// yhw wala get me hi ek token passkr rhe hai
         // console.log("Cookies", req.cookies.token);
         // console.log("Header", req.header("Authorization").replace("Bearer", " "));
 
@@ -26,6 +26,7 @@ exports.auth = (req, res, next) => {
             console.log(decode)
 
             req.user = decode;
+            
         }
         catch (e) {
             return res.status(401).json({

@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');// encript or de cript krne ke kaam aata hai
 const User = require("../Models/User");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken")// create spacial token to valid the user
 
 require("dotenv").config()
 
@@ -33,6 +33,7 @@ exports.signup = async (req, res) => {
         }
 
         // Create Entry for User
+        // user wala jo modal hai usme create kia database me
         let user = await User.create({
             name,email,password:hashedPassword,role
         });
@@ -92,7 +93,7 @@ exports.login = async (req,res) => {
 
             user = user.toObject();
             user.token = token;
-            user.password = undefined;
+            user.password = undefined;// password ko hide kr diya ser se
 
             const options = {
                 expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),

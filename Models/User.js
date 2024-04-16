@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    require: true,// dena hi dena hai
     trim: true,
   },
   email: {
     type: String,
     require: true,
-    trim: true,
+    trim: true,// trim true help to remove the space from start and end
   },
   password: {
     type: String,

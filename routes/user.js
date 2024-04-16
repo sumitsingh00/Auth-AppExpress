@@ -17,6 +17,7 @@ router.get("/test", auth, (req, res) => {
 })
 
 // Protected Route for Student
+// phle auth wala route chlega then isstudent wala
 router.get("/student", auth, isStudent, (req, res) => {
     res.json({
         success: true,
